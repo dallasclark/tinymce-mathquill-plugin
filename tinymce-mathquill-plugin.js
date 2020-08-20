@@ -52,7 +52,7 @@ tinymce.PluginManager.add('mathquill', function (editor, url) {
                 
                 // Create the Mathquill Formula Element
                 var mathquillFormulaId = 'mathquill_' + Date.now();
-                var mathquillFormula = tinymce.activeEditor.dom.createHTML(
+                var mathquillFormula = editor.dom.createHTML(
                     'span',
                     {
                         id: mathquillFormulaId
@@ -60,7 +60,7 @@ tinymce.PluginManager.add('mathquill', function (editor, url) {
                     data.formula
                 );
                 editor.insertContent(mathquillFormula);
-                mathquillFormulaReference = tinymce.activeEditor.dom.get(mathquillFormulaId);
+                mathquillFormulaReference = editor.dom.get(mathquillFormulaId);
                 MQ.StaticMath(mathquillFormulaReference);
 
                 // Close dialog window
